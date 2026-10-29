@@ -2,11 +2,11 @@ import re
 
 ip = input("Enter an IP address: ")
 
-pattern = r"^\d{1,3}(\.\d{1,3}){3}$"
+pattern = re.match(r"^\d{1,3}(\.\d{1,3}){3}$",ip)
 
-m = re.match(pattern, ip)
 
-if m:
-    print("Valid IP address:", m.group())
+
+if pattern:
+    print("Valid IP address:", pattern.group())
 else:
     print("Invalid IP address")  # Print a message indicating the IP address is invalid
